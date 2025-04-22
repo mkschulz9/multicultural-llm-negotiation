@@ -4,7 +4,7 @@ import os
 import uuid
 
 
-def save_negotiation_log(log, folder="negotiation_histories"):
+def save_negotiation_log(log, folder="src/negotiation_histories"):
     """
     Saves the negotiation log to a uniquely named JSON file.
 

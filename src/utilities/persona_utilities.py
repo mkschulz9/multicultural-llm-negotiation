@@ -76,7 +76,7 @@ def create_personas(
     acquiring_countries: list,
     target_countries: list,
     openAI_client: OpenAI,
-    folder: str = "generated_personas",
+    folder: str = "src/generated_personas",
 ) -> tuple[dict[str, Any], dict[str, Any]]:
     """
     Creates and saves new acquirer-target personas with random countries in ONE unique file in specified folder.

@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LLM Negotiation Log</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      padding: 40px;
+      color: #333;
+      line-height: 1.6;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .entry {
+      margin-bottom: 32px;
+      padding: 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .entry summary {
+      padding: 16px;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 8px;
+    }
+    .entry.acquirer summary {
+      background: #e6f4ea;
+      border-left: 6px solid #4caf50;
+    }
+    .entry.target summary {
+      background: #e8f0fe;
+      border-left: 6px solid #1a73e8;
+    }
+    .entry .content {
+      padding: 16px;
+      background: #fff;
+      border-top: 1px solid #ddd;
+    }
+    details {
+      margin-top: 12px;
+    }
+    summary {
+      cursor: pointer;
+      color: #007acc;
+    }
+    pre {
+      background: #f4f4f4;
+      padding: 12px;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+  <h1>LLM Negotiation Transcript</h1>
+
+    <details style="background: #e6f4ea; padding: 10px; border-radius: 8px; margin-bottom: 24px;" open>
+      <summary><span style="font-size: 20px; font-weight: bold;">Acquirer Persona</span></summary>
+      <p><strong>Country:</strong> Canada</p>
+      <p><strong>Description:</strong> **Northern Timber Resources Inc.** is a mid-sized Canadian company specializing in sustainable forestry management, timber harvesting, and wood product manufacturing. Headquartered in British Columbia, the company operates across multiple provinces, focusing on producing high-quality lumber and wood pulp for both domestic and international markets. Committed to environmental stewardship, Northern Timber Resources Inc. integrates advanced technologies to ensure responsible forestry practices.</p>
+      <p><strong>Cultural Profile:</strong> Northern Timber Resources Inc. fosters a culture of direct and transparent communication, emphasizing collaboration and respect for diverse perspectives. In negotiations, the company prioritizes fairness and long-term partnerships, reflecting its commitment to sustainability and responsible forestry practices. Business etiquette is formal yet approachable, valuing punctuality and professionalism while maintaining an inclusive and respectful environment.</p>
+      <p><strong>Authority Dynamics:</strong> At Northern Timber Resources Inc., decision-making authority is centralized, with senior management and the executive team holding final approval power over major business deals. While negotiators may have autonomy in exploratory discussions, significant commitments require formal approval to ensure alignment with the company’s strategic and sustainability goals. The structure is hierarchical, with a clear chain of command ensuring that all major decisions are vetted and approved by top leadership.</p>
+      <p><strong>Financial Info:</strong> Northern Timber Resources Inc. generates annual revenues of $200–$300 million, with a profit margin of 12–15%, driven by its efficient operations and strong market demand for sustainable wood products. The company is valued at $500–$750 million, providing the financial capacity to pursue strategic acquisitions and expand its market presence.</p>
+      <p><strong>Unspoken Interests:</strong> Northern Timber Resources Inc. will prioritize acquiring assets that align with its commitment to environmental sustainability, aiming to expand its access to responsibly sourced timber while maintaining its reputation as a leader in ethical forestry practices. The company will also seek to secure long-term supply chain control in key international markets, ensuring stable access to high-quality raw materials. Additionally, it will focus on identifying targets with advanced technologies or certifications that can enhance its operational efficiency and strengthen its market position in sustainable wood products.</p>
+    </details>
+    
+    <details style="background: #e8f0fe; padding: 10px; border-radius: 8px; margin-bottom: 24px;" open>
+      <summary><span style="font-size: 20px; font-weight: bold;">Target Persona</span></summary>
+      <p><strong>Country:</strong> India</p>
+      <p><strong>Description:</strong> **GreenWood Solutions Pvt. Ltd.** is an Indian company based in Mumbai, specializing in sustainable wood processing and eco-friendly wood product manufacturing. With a focus on engineered wood products like plywood, medium-density fiberboard (MDF), and bio-based composites, GreenWood Solutions caters to both domestic and international markets, emphasizing advanced manufacturing and R&D for innovative, environmentally responsible materials.</p>
+      <p><strong>Cultural Profile:</strong> GreenWood Solutions Pvt. Ltd. exhibits a formal and polite communication style, reflecting the respect and hierarchy valued in Indian business culture. Their negotiation behavior is thorough and detail-oriented, prioritizing mutually beneficial agreements and long-term partnerships. The company emphasizes building trusting relationships and adheres to business etiquette that aligns with their commitment to sustainability and innovation.</p>
+      <p><strong>Authority Dynamics:</strong> At GreenWood Solutions Pvt. Ltd., decision-making authority is centralized, with senior executives holding the final approval power for business deals. While lower-level representatives are entrusted to manage detailed negotiations and discussions, they must seek approval from higher management before concluding any agreements. This structured approach ensures alignment with the company's strategic goals and sustainability values, fostering a collaborative and thorough negotiation process.</p>
+      <p><strong>Financial Info:</strong> GreenWood Solutions Pvt. Ltd. generates annual revenues of $10–$30 million, with a profit margin of 8–12%, driven by its niche focus on sustainable wood products and strong R&D capabilities. The company is valued at $15–$30 million, positioning it as an attractive acquisition target for larger players seeking to expand their sustainable product offerings.</p>
+      <p><strong>Unspoken Interests:</strong> GreenWood Solutions will prioritize ensuring that any acquisition aligns with its core values of sustainability and innovation, likely seeking assurances that its R&D capabilities and eco-friendly product focus remain central to the merged entity. The company may also aim to negotiate terms that allow it to retain some operational autonomy, particularly in areas related to its advanced manufacturing processes. Additionally, it will likely emphasize the importance of cultural fit with the acquirer to maintain its collaborative and trusting business relationships.</p>
+    </details>
+    
+<details class="entry acquirer" closed>
+  <summary>Turn 1 - Acquirer</summary>
+  <div class="content">
+    <div class="message" data-markdown>"**Official Negotiation Statement:**\n\nWe appreciate the opportunity to engage in this acquisition discussion with GreenWood Solutions Pvt. Ltd. and recognize the strategic alignment our companies share in sustainable forestry and wood product innovation. \n\nWe propose an acquisition valued at $27.5 million, reflecting a 1.5 times multiple on your revenues, considering your strong R&D capabilities and market position. The payment structure would be 70% cash upfront and 30% in stock, with an earn-out provision of 10% tied to achieving specific revenue targets over two years. This structure aligns our interests and ensures continued commitment from your management team.\n\nThe synergies are evident in our shared commitment to sustainability and the potential to integrate our R&D efforts, enhancing our product offerings and market reach. However, we foresee potential friction in cultural integration and scalability of your niche products, which we are willing to address collaboratively.\n\nWe propose a due diligence period of 8-10 weeks, followed by the signing of definitive agreements, aiming for a swift closing. We are eager to move forward and are open to further discussions to finalize terms.\n\n**Term Sheet:**\n\n```json\n{\n  \"valuation\": \"$27.5 million\",\n  \"payment_structure\": \"70% cash upfront, 30% stock\",\n  \"earn_out\": \"10% tied to revenue targets over two years\",\n  \"due_diligence_timeline\": \"8-10 weeks\",\n  \"other_key_terms\": \"Integration of R&D, collaborative management\"\n}\n```\n\n**Company Negotiation State:** pending"</div>
+    <details>
+      <summary style="background: none">Show LLM Reasoning</summary>
+      <pre></pre>
+    </details>
+    <details>
+      <summary style="background: none">Show Prompt</summary>
+      <pre>No prior negotiation history exists. 
+Begin the negotiation to acquire the TARGET company by providing your initial official statement. 
+
+Focus on these M&A deal points:
+- Valuation (provide a numeric figure or multiple, e.g. $XX million, X times revenue, etc.)
+- Payment Structure (cash, stock, earn-out terms, etc.)
+- Key Synergies and Potential Friction (where do you see alignment or conflict?)
+- Due Diligence / Timeline (how long for diligence, when to sign definitive agreements?)
+
+Remember:
+- Push for your company's best interests
+- Reflect your company's culture, authority dynamics, and unspoken interests
+- Do not include salutations or sign-offs
+- Maintain a professional, concise tone
+
+Please append a term sheet in **JSON** at the end of your response. 
+Use a structure like:
+```json
+{{
+  "valuation": "...",
+  "payment_structure": "...",
+  "earn_out": "...",
+  "due_diligence_timeline": "...",
+  "other_key_terms": "...",
+  ...
+}}
+```
+
+Finally, be sure to end with:
+
+Company Negotiation State: [pending or complete].
+
+- pending: your company still wishes to negotiate the terms
+- complete: your company is satified and will agree to the terms
+ <think></pre>
+    </details>
+  </div>
+</details>
+
+<details class="entry target" closed>
+  <summary>Turn 2 - Target</summary>
+  <div class="content">
+    <div class="message" data-markdown>"We appreciate your proposal and recognize the strategic potential of this acquisition. After careful consideration, we propose the following adjustments to ensure alignment with GreenWood Solutions' core values and long-term goals:\n\n1. **Valuation**: We propose a valuation of $28 million, reflecting our strong R&D capabilities and market position.\n\n2. **Payment Structure**: We suggest an 80% cash upfront and 20% stock structure to provide greater certainty and value for our stakeholders.\n\n3. **Earn-out**: We recommend reducing the earn-out to 5%, tied to maintaining R&D spending levels, ensuring our innovation focus remains central.\n\n4. **Synergies**: We propose establishing a joint R&D committee to oversee integration and maintain our eco-friendly product focus.\n\n5. **Due Diligence Timeline**: We accept the 8-10 week period but request flexibility to ensure thorough review.\n\n6. **Cultural Fit and Sustainability**: We emphasize the importance of maintaining our R&D autonomy and cultural values, ensuring a smooth integration.\n\n**Updated Term Sheet:**\n\n```json\n{\n  \"valuation\": \"$28 million\",\n  \"payment_structure\": \"80% cash upfront, 20% stock\",\n  \"earn_out\": \"5% tied to R&D spending levels\",\n  \"due_diligence_timeline\": \"8-10 weeks with flexibility\",\n  \"other_key_terms\": \"Joint R&D committee, R&D budget maintenance\"\n}\n```\n\n**Company Negotiation State:** pending\n\nThis structured approach ensures we meet our strategic goals while fostering a collaborative partnership."</div>
+    <details>
+      <summary style="background: none">Show LLM Reasoning</summary>
+      <pre></pre>
+    </details>
+    <details>
+      <summary style="background: none">Show Prompt</summary>
+      <pre>Below is the ongoing negotiation history between your company and the other party. 
+Continue the conversation by providing your company's official negotiation response. 
+
+Focus on these M&A deal points:
+- Valuation (provide a numeric figure or multiple, e.g. $XX million, X times revenue, etc.)
+- Payment Structure (cash, stock, earn-out terms, etc.)
+- Key Synergies and Potential Friction (where do you see alignment or conflict?)
+- Due Diligence / Timeline (how long for diligence, when to sign definitive agreements?)
+- Any Pending Requests from the other side not yet addressed
+
+Remember:
+- Push for your company's best interests
+- Reflect your company's culture, authority dynamics, and unspoken interests
+- Do not include salutations or sign-offs
+- Maintain a professional, concise tone
+
+If you propose or change any terms, please append an updated term sheet in **JSON** at the end of your response. 
+Use a structure like:
+```json
+{
+  "valuation": "...",
+  "payment_structure": "...",
+  "earn_out": "...",
+  "due_diligence_timeline": "...",
+  "other_key_terms": "...",
+  ...
+}
+```
+If you do not propose any changes, you can reaffirm existing terms or omit the JSON.
+
+Finally, be sure to end with:
+
+Company Negotiation State: [pending or complete].
+
+- pending: your company still wishes to negotiate the terms
+- complete: your company is satified and will agree to the terms
+
+Negotiation History: 
+ACQUIRER:
+**Official Negotiation Statement:**
+
+We appreciate the opportunity to engage in this acquisition discussion with GreenWood Solutions Pvt. Ltd. and recognize the strategic alignment our companies share in sustainable forestry and wood product innovation. 
+
+We propose an acquisition valued at $27.5 million, reflecting a 1.5 times multiple on your revenues, considering your strong R&D capabilities and market position. The payment structure would be 70% cash upfront and 30% in stock, with an earn-out provision of 10% tied to achieving specific revenue targets over two years. This structure aligns our interests and ensures continued commitment from your management team.
+
+The synergies are evident in our shared commitment to sustainability and the potential to integrate our R&D efforts, enhancing our product offerings and market reach. However, we foresee potential friction in cultural integration and scalability of your niche products, which we are willing to address collaboratively.
+
+We propose a due diligence period of 8-10 weeks, followed by the signing of definitive agreements, aiming for a swift closing. We are eager to move forward and are open to further discussions to finalize terms.
+
+**Term Sheet:**
+
+```json
+{
+  "valuation": "$27.5 million",
+  "payment_structure": "70% cash upfront, 30% stock",
+  "earn_out": "10% tied to revenue targets over two years",
+  "due_diligence_timeline": "8-10 weeks",
+  "other_key_terms": "Integration of R&D, collaborative management"
+}
+```
+
+**Company Negotiation State:** pending
+ <think> <think></pre>
+    </details>
+  </div>
+</details>
+
+<details class="entry acquirer" closed>
+  <summary>Turn 3 - Acquirer</summary>
+  <div class="content">
+    <div class="message" data-markdown>"**Official Negotiation Statement:**\n\nWe acknowledge your counteroffer and appreciate the detailed considerations. After careful review, we are pleased to accept the valuation of $28 million, recognizing the strategic value your company brings, particularly in R&D and sustainable practices.\n\nRegarding the payment structure, we propose a balanced approach of 75% cash upfront and 25% stock, ensuring a fair compromise that respects both parties' interests. We agree to the earn-out structure of 5% tied to R&D spending levels, aligning with our shared commitment to innovation and sustainability.\n\nWe support the establishment of a joint R&D committee to foster collaboration and maintain your company's R&D autonomy, crucial for a seamless integration. The due diligence timeline remains at 8-10 weeks, with flexibility as requested, to ensure a thorough process.\n\nWe recognize the importance of cultural fit and sustainability, ensuring a smooth transition that respects your values. The synergies from integrating our R&D efforts and expanding market reach are significant, and we are committed to addressing potential friction points proactively.\n\n**Term Sheet:**\n\n```json\n{\n  \"valuation\": \"$28 million\",\n  \"payment_structure\": \"75% cash upfront, 25% stock\",\n  \"earn_out\": \"5% tied to R&D spending levels\",\n  \"due_diligence_timeline\": \"8-10 weeks with flexibility\",\n  \"other_key_terms\": \"Joint R&D committee, R&D budget maintenance\"\n}\n```\n\n**Company Negotiation State:** complete\n\nThis structured approach ensures a strategic and collaborative partnership, aligning our goals for innovation and sustainability."</div>
+    <details>
+      <summary style="background: none">Show LLM Reasoning</summary>
+      <pre></pre>
+    </details>
+    <details>
+      <summary style="background: none">Show Prompt</summary>
+      <pre>Below is the ongoing negotiation history between your company and the other party. 
+Continue the conversation by providing your company's official negotiation response. 
+
+Focus on these M&A deal points:
+- Valuation (provide a numeric figure or multiple, e.g. $XX million, X times revenue, etc.)
+- Payment Structure (cash, stock, earn-out terms, etc.)
+- Key Synergies and Potential Friction (where do you see alignment or conflict?)
+- Due Diligence / Timeline (how long for diligence, when to sign definitive agreements?)
+- Any Pending Requests from the other side not yet addressed
+
+Remember:
+- Push for your company's best interests
+- Reflect your company's culture, authority dynamics, and unspoken interests
+- Do not include salutations or sign-offs
+- Maintain a professional, concise tone
+
+If you propose or change any terms, please append an updated term sheet in **JSON** at the end of your response. 
+Use a structure like:
+```json
+{
+  "valuation": "...",
+  "payment_structure": "...",
+  "earn_out": "...",
+  "due_diligence_timeline": "...",
+  "other_key_terms": "...",
+  ...
+}
+```
+If you do not propose any changes, you can reaffirm existing terms or omit the JSON.
+
+Finally, be sure to end with:
+
+Company Negotiation State: [pending or complete].
+
+- pending: your company still wishes to negotiate the terms
+- complete: your company is satified and will agree to the terms
+
+Negotiation History: 
+ACQUIRER:
+**Official Negotiation Statement:**
+
+We appreciate the opportunity to engage in this acquisition discussion with GreenWood Solutions Pvt. Ltd. and recognize the strategic alignment our companies share in sustainable forestry and wood product innovation. 
+
+We propose an acquisition valued at $27.5 million, reflecting a 1.5 times multiple on your revenues, considering your strong R&D capabilities and market position. The payment structure would be 70% cash upfront and 30% in stock, with an earn-out provision of 10% tied to achieving specific revenue targets over two years. This structure aligns our interests and ensures continued commitment from your management team.
+
+The synergies are evident in our shared commitment to sustainability and the potential to integrate our R&D efforts, enhancing our product offerings and market reach. However, we foresee potential friction in cultural integration and scalability of your niche products, which we are willing to address collaboratively.
+
+We propose a due diligence period of 8-10 weeks, followed by the signing of definitive agreements, aiming for a swift closing. We are eager to move forward and are open to further discussions to finalize terms.
+
+**Term Sheet:**
+
+```json
+{
+  "valuation": "$27.5 million",
+  "payment_structure": "70% cash upfront, 30% stock",
+  "earn_out": "10% tied to revenue targets over two years",
+  "due_diligence_timeline": "8-10 weeks",
+  "other_key_terms": "Integration of R&D, collaborative management"
+}
+```
+
+**Company Negotiation State:** pending
+TARGET:
+We appreciate your proposal and recognize the strategic potential of this acquisition. After careful consideration, we propose the following adjustments to ensure alignment with GreenWood Solutions' core values and long-term goals:
+
+1. **Valuation**: We propose a valuation of $28 million, reflecting our strong R&D capabilities and market position.
+
+2. **Payment Structure**: We suggest an 80% cash upfront and 20% stock structure to provide greater certainty and value for our stakeholders.
+
+3. **Earn-out**: We recommend reducing the earn-out to 5%, tied to maintaining R&D spending levels, ensuring our innovation focus remains central.
+
+4. **Synergies**: We propose establishing a joint R&D committee to oversee integration and maintain our eco-friendly product focus.
+
+5. **Due Diligence Timeline**: We accept the 8-10 week period but request flexibility to ensure thorough review.
+
+6. **Cultural Fit and Sustainability**: We emphasize the importance of maintaining our R&D autonomy and cultural values, ensuring a smooth integration.
+
+**Updated Term Sheet:**
+
+```json
+{
+  "valuation": "$28 million",
+  "payment_structure": "80% cash upfront, 20% stock",
+  "earn_out": "5% tied to R&D spending levels",
+  "due_diligence_timeline": "8-10 weeks with flexibility",
+  "other_key_terms": "Joint R&D committee, R&D budget maintenance"
+}
+```
+
+**Company Negotiation State:** pending
+
+This structured approach ensures we meet our strategic goals while fostering a collaborative partnership.
+ <think></pre>
+    </details>
+  </div>
+</details>
+
+<details class="entry target" closed>
+  <summary>Turn 4 - Target</summary>
+  <div class="content">
+    <div class="message" data-markdown>"**Official Negotiation Statement:**\n\nWe appreciate your willingness to compromise and recognize the strategic benefits this acquisition presents for both parties. We are pleased to accept the valuation of $28 million and acknowledge the adjusted payment structure of 75% cash upfront and 25% stock, which provides a balanced approach respecting both parties' interests.\n\nThe earn-out structure of 5% tied to R&D spending levels is acceptable, as it aligns with our shared commitment to innovation and sustainability. We agree to the 8-10 week due diligence timeline with the requested flexibility to ensure a thorough review process.\n\nWe emphasize the importance of establishing a joint R&D committee to oversee the integration of our research and development efforts, ensuring that GreenWood Solutions' R&D autonomy and eco-friendly product focus remain central to the merged entity. This collaboration will be crucial for maintaining our operational independence in advanced manufacturing processes and fostering a smooth cultural integration.\n\nWe recognize the synergies in our shared commitment to sustainability and the potential to enhance our product offerings and market reach. We are committed to addressing potential friction points proactively, particularly in cultural integration and scalability of our niche products.\n\n**Term Sheet:**\n\n```json\n{\n  \"valuation\": \"$28 million\",\n  \"payment_structure\": \"75% cash upfront, 25% stock\",\n  \"earn_out\": \"5% tied to R&D spending levels\",\n  \"due_diligence_timeline\": \"8-10 weeks with flexibility\",\n  \"other_key_terms\": \"Joint R&D committee, R&D budget maintenance, operational autonomy in advanced manufacturing\"\n}\n```\n\n**Company Negotiation State:** complete"</div>
+    <details>
+      <summary style="background: none">Show LLM Reasoning</summary>
+      <pre></pre>
+    </details>
+    <details>
+      <summary style="background: none">Show Prompt</summary>
+      <pre>Below is the ongoing negotiation history between your company and the other party. 
+Continue the conversation by providing your company's official negotiation response. 
+
+Focus on these M&A deal points:
+- Valuation (provide a numeric figure or multiple, e.g. $XX million, X times revenue, etc.)
+- Payment Structure (cash, stock, earn-out terms, etc.)
+- Key Synergies and Potential Friction (where do you see alignment or conflict?)
+- Due Diligence / Timeline (how long for diligence, when to sign definitive agreements?)
+- Any Pending Requests from the other side not yet addressed
+
+Remember:
+- Push for your company's best interests
+- Reflect your company's culture, authority dynamics, and unspoken interests
+- Do not include salutations or sign-offs
+- Maintain a professional, concise tone
+
+If you propose or change any terms, please append an updated term sheet in **JSON** at the end of your response. 
+Use a structure like:
+```json
+{
+  "valuation": "...",
+  "payment_structure": "...",
+  "earn_out": "...",
+  "due_diligence_timeline": "...",
+  "other_key_terms": "...",
+  ...
+}
+```
+If you do not propose any changes, you can reaffirm existing terms or omit the JSON.
+
+Finally, be sure to end with:
+
+Company Negotiation State: [pending or complete].
+
+- pending: your company still wishes to negotiate the terms
+- complete: your company is satified and will agree to the terms
+
+Negotiation History: 
+ACQUIRER:
+**Official Negotiation Statement:**
+
+We appreciate the opportunity to engage in this acquisition discussion with GreenWood Solutions Pvt. Ltd. and recognize the strategic alignment our companies share in sustainable forestry and wood product innovation. 
+
+We propose an acquisition valued at $27.5 million, reflecting a 1.5 times multiple on your revenues, considering your strong R&D capabilities and market position. The payment structure would be 70% cash upfront and 30% in stock, with an earn-out provision of 10% tied to achieving specific revenue targets over two years. This structure aligns our interests and ensures continued commitment from your management team.
+
+The synergies are evident in our shared commitment to sustainability and the potential to integrate our R&D efforts, enhancing our product offerings and market reach. However, we foresee potential friction in cultural integration and scalability of your niche products, which we are willing to address collaboratively.
+
+We propose a due diligence period of 8-10 weeks, followed by the signing of definitive agreements, aiming for a swift closing. We are eager to move forward and are open to further discussions to finalize terms.
+
+**Term Sheet:**
+
+```json
+{
+  "valuation": "$27.5 million",
+  "payment_structure": "70% cash upfront, 30% stock",
+  "earn_out": "10% tied to revenue targets over two years",
+  "due_diligence_timeline": "8-10 weeks",
+  "other_key_terms": "Integration of R&D, collaborative management"
+}
+```
+
+**Company Negotiation State:** pending
+TARGET:
+We appreciate your proposal and recognize the strategic potential of this acquisition. After careful consideration, we propose the following adjustments to ensure alignment with GreenWood Solutions' core values and long-term goals:
+
+1. **Valuation**: We propose a valuation of $28 million, reflecting our strong R&D capabilities and market position.
+
+2. **Payment Structure**: We suggest an 80% cash upfront and 20% stock structure to provide greater certainty and value for our stakeholders.
+
+3. **Earn-out**: We recommend reducing the earn-out to 5%, tied to maintaining R&D spending levels, ensuring our innovation focus remains central.
+
+4. **Synergies**: We propose establishing a joint R&D committee to oversee integration and maintain our eco-friendly product focus.
+
+5. **Due Diligence Timeline**: We accept the 8-10 week period but request flexibility to ensure thorough review.
+
+6. **Cultural Fit and Sustainability**: We emphasize the importance of maintaining our R&D autonomy and cultural values, ensuring a smooth integration.
+
+**Updated Term Sheet:**
+
+```json
+{
+  "valuation": "$28 million",
+  "payment_structure": "80% cash upfront, 20% stock",
+  "earn_out": "5% tied to R&D spending levels",
+  "due_diligence_timeline": "8-10 weeks with flexibility",
+  "other_key_terms": "Joint R&D committee, R&D budget maintenance"
+}
+```
+
+**Company Negotiation State:** pending
+
+This structured approach ensures we meet our strategic goals while fostering a collaborative partnership.
+ACQUIRER:
+**Official Negotiation Statement:**
+
+We acknowledge your counteroffer and appreciate the detailed considerations. After careful review, we are pleased to accept the valuation of $28 million, recognizing the strategic value your company brings, particularly in R&D and sustainable practices.
+
+Regarding the payment structure, we propose a balanced approach of 75% cash upfront and 25% stock, ensuring a fair compromise that respects both parties' interests. We agree to the earn-out structure of 5% tied to R&D spending levels, aligning with our shared commitment to innovation and sustainability.
+
+We support the establishment of a joint R&D committee to foster collaboration and maintain your company's R&D autonomy, crucial for a seamless integration. The due diligence timeline remains at 8-10 weeks, with flexibility as requested, to ensure a thorough process.
+
+We recognize the importance of cultural fit and sustainability, ensuring a smooth transition that respects your values. The synergies from integrating our R&D efforts and expanding market reach are significant, and we are committed to addressing potential friction points proactively.
+
+**Term Sheet:**
+
+```json
+{
+  "valuation": "$28 million",
+  "payment_structure": "75% cash upfront, 25% stock",
+  "earn_out": "5% tied to R&D spending levels",
+  "due_diligence_timeline": "8-10 weeks with flexibility",
+  "other_key_terms": "Joint R&D committee, R&D budget maintenance"
+}
+```
+
+**Company Negotiation State:** complete
+
+This structured approach ensures a strategic and collaborative partnership, aligning our goals for innovation and sustainability.
+ <think></pre>
+    </details>
+  </div>
+</details>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("[data-markdown]").forEach(el => {
+      const raw = JSON.parse(el.textContent);
+      el.innerHTML = marked.parse(raw);
+    });
+  });
+</script>
+</body>
+</html>

@@ -23,7 +23,7 @@ def main():
 
     # List of typical acquiring and target business countries of origin in negotiation
     acquiring_countries = ["US", "UK", "France", "Japan", "Canada"]
-    target_countries = ["US", "UK", "Singapore", "China", "India", "Brazil"]
+    target_countries = ["Africa", "Russia", "Singapore", "China", "India", "Brazil"]
 
     # Either randomly load existing personas or generate new ones
     load_create_personas_choice = (

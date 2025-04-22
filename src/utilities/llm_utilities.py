@@ -30,7 +30,7 @@ def prompt_llm_with_retry(
             stream_content=stream_content,
         )
         # Return response and reasoning if not empty
-        if response and reasoning:
+        if response:
             # Retrieves original query used to prompt LLM
             user_query = messages[-1]["content"]
             return (
@@ -66,9 +66,6 @@ def prompt_llm(
         returns (Optional[tuple[str, str]]): A tuple containing: `final_response` (user-facing part of the LLM response) and `think_response` (internal reasoning/thinking portion generated before `</think>`)
             Returns (None, None) if an error occurs during request or response processing.
     """
-    # print("0" * 75)
-    # print(messages)
-    # print("0" * 75)
     # Append a <think> token to signal model to think (necessary for specific default model)
     messages[-1]["content"] += " <think>"
 
@@ -82,45 +79,69 @@ def prompt_llm(
         print(f"Error during call to OpenAI Chat API: {e}")
         return None, None
 
-    # Streaming response handling block
+    # Response handling block (includes streaming handling)
     try:
-        # Iterate over chunks and stream if streaming
-        if stream_content:
-            accumulated_content = ""
-            llm_thinking = True
-            print(f"LLM Thinking...\n{"~"*50}")
+        print("Trying to parse LLM response...\n")
+        llm_thinking = False
+        buffer = ""
+        accumulated_response = ""
+        think_open_tag = "<think>"
+        think_close_tag = "</think>"
 
-            # Iterates over the streamed response chunk objects
-            for chatCompletion_chunk in chatCompletion_response:
-                # Get response content
-                chunk_content = chatCompletion_chunk.choices[0].delta.content
-                # If content is not empty
-                if chunk_content:
-                    accumulated_content += chunk_content
-                    # Check for token, signaling LLM finished thinking
-                    if chunk_content == "</think>":
-                        llm_thinking = False
-                        continue
-                    # If LLM is not thinking, stream response
-                    elif not llm_thinking:
-                        print(
-                            chunk_content.lstrip("\n"),
-                            end="",
-                            flush=True,
-                        )
-            print(f"\n{"~"*50}")
-        # Just grab full content response if not streaming
+        # Iterate over the streamed response chunk objects
+        for chunk in chatCompletion_response:
+            # Get response content
+            chunk_content = chunk.choices[0].delta.content
+            if not chunk_content:
+                continue
+            else:
+                accumulated_response += chunk_content
+
+            # Check if LLM is thinking
+            if chunk_content == think_open_tag:
+                llm_thinking = True
+                print("LLM thinking...")
+                continue
+
+            # If LLM is thinking, check if it has finished thinking
+            if llm_thinking and chunk_content == think_close_tag:
+                llm_thinking = False
+                continue
+
+            # Print the LLM response if it has finished thinking
+            if not llm_thinking:
+                buffer += chunk_content
+                if len(buffer) > 20 or "\n" in buffer:
+                    print(buffer.lstrip("\n"), end="", flush=True)
+                    buffer = ""
+
+        # Catch and print any unprinted buffer content
+        if buffer:
+            print(buffer.lstrip("\n"), end="", flush=True)
+
+        print()
+        # Parse accumulated response it LLM thought
+        if (
+            think_open_tag in accumulated_response
+            and think_close_tag in accumulated_response
+        ):
+            start = accumulated_response.index(think_open_tag)
+            end = accumulated_response.index(think_close_tag)
+
+            # Reasoning is between the tags
+            reasoning = accumulated_response[start + len(think_open_tag) : end]
+
+            # Response is everything else
+            response = (
+                accumulated_response[:start]
+                + accumulated_response[end + len(think_close_tag) :]
+            ).lstrip("\n")
         else:
-            accumulated_content = chatCompletion_response.choices[0].message.content
+            # No explicit reasoning section
+            response = accumulated_response.lstrip("\n")
+            reasoning = ""
 
-        # Split content into thinking and non-thinking parts
-        parts = accumulated_content.split("</think>", maxsplit=1)
-
-        # Remove leading and trailing whitespaces and return content
-        think_response = parts[0].strip()
-        final_response = parts[1].strip()
-        return final_response, think_response
-    # Error during LLM content extraction (streaming or not)
+        return response, reasoning
     except Exception as e:
-        print(f"Error in LLM response: {e}\n{"~"*50}")
+        print(f"Error during LLM response streaming: {e}\n{"~"*50}")
         return None, None
