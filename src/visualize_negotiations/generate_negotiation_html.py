@@ -5,7 +5,7 @@ from pathlib import Path
 base_path = Path(__file__).resolve().parents[1]
 history_dir = base_path / "negotiation_histories"
 persona_dir = base_path / "generated_personas"
-output_dir = base_path / "analysis"
+output_dir = base_path / "visualize_negotiations"
 output_dir.mkdir(parents=True, exist_ok=True)
 
 # Gather matching JSON files
